@@ -1,0 +1,400 @@
+{
+  "global_stats": {
+    "total_jobs": 286,
+    "salary_min": 57.5,
+    "salary_max": 500000.0,
+    "salary_median": 113726.5,
+    "entry_level_rate": 9.090909090909092,
+    "remote_rate": 8.741258741258742,
+    "avg_skills_per_job": 0.6118881118881119,
+    "top_skills": {
+      "Machine Learning": 48,
+      "Deep Learning": 19,
+      "NLP": 19,
+      "Git": 12,
+      "Statistics": 12,
+      "SQL": 11,
+      "Scala": 11,
+      "Excel": 10,
+      "Python": 7,
+      "Power BI": 7,
+      "Tableau": 4,
+      "AWS": 4,
+      "Spark": 3,
+      "Azure": 2,
+      "Pandas": 1,
+      "GCP": 1,
+      "ETL": 1,
+      "Hadoop": 1,
+      "SPSS": 1,
+      "Java": 1
+    }
+  },
+  "career_metrics": [
+    {
+      "career_path": "AI Researcher",
+      "M1_job_postings": 47,
+      "M2_entry_pct": 6.4,
+      "M3_remote_pct": 12.8,
+      "M4_junior_title_pct": 6.4,
+      "M5_market_share": 16.4,
+      "C1_salary_median": 168356.0,
+      "C2_salary_range_avg": 44373.0,
+      "C3_salary_premium_pct": 48.0,
+      "C4_compensation_rank": 1,
+      "S1_skill_barrier_score": 0.4,
+      "S2_entry_accessibility": -2.7,
+      "S3_competition_index": 93.6,
+      "K1_avg_skills_required": 0.4,
+      "K2_skill_overlap_pct": 25.0,
+      "K3_unique_skills_count": 5,
+      "K4_top_skills": {
+        "Machine Learning": 9,
+        "Deep Learning": 5,
+        "Scala": 4,
+        "Git": 1,
+        "NLP": 1
+      },
+      "F1_remote_advantage": 4.0,
+      "F2_growth_potential": 4.3,
+      "F3_versatility_score": 27.1,
+      "raw_entry_jobs": 3,
+      "raw_remote_jobs": 6,
+      "raw_salary_count": 47,
+      "raw_skills_total": 20
+    },
+    {
+      "career_path": "Business Intelligence Analyst",
+      "M1_job_postings": 43,
+      "M2_entry_pct": 11.6,
+      "M3_remote_pct": 11.6,
+      "M4_junior_title_pct": 0.0,
+      "M5_market_share": 15.0,
+      "C1_salary_median": 85139.0,
+      "C2_salary_range_avg": 3630.0,
+      "C3_salary_premium_pct": -25.1,
+      "C4_compensation_rank": 8,
+      "S1_skill_barrier_score": 0.6,
+      "S2_entry_accessibility": 2.5,
+      "S3_competition_index": 88.4,
+      "K1_avg_skills_required": 0.6,
+      "K2_skill_overlap_pct": 45.0,
+      "K3_unique_skills_count": 9,
+      "K4_top_skills": {
+        "SQL": 5,
+        "Power BI": 5,
+        "Deep Learning": 4,
+        "Excel": 3,
+        "Tableau": 3,
+        "Git": 2,
+        "Python": 2,
+        "Pandas": 1,
+        "AWS": 1
+      },
+      "F1_remote_advantage": 2.9,
+      "F2_growth_potential": 6.0,
+      "F3_versatility_score": 48.0,
+      "raw_entry_jobs": 5,
+      "raw_remote_jobs": 5,
+      "raw_salary_count": 43,
+      "raw_skills_total": 26
+    },
+    {
+      "career_path": "Data Analyst",
+      "M1_job_postings": 46,
+      "M2_entry_pct": 6.5,
+      "M3_remote_pct": 4.3,
+      "M4_junior_title_pct": 2.2,
+      "M5_market_share": 16.1,
+      "C1_salary_median": 88925.0,
+      "C2_salary_range_avg": 1040.0,
+      "C3_salary_premium_pct": -21.8,
+      "C4_compensation_rank": 7,
+      "S1_skill_barrier_score": 0.5,
+      "S2_entry_accessibility": -2.6,
+      "S3_competition_index": 93.5,
+      "K1_avg_skills_required": 0.5,
+      "K2_skill_overlap_pct": 50.0,
+      "K3_unique_skills_count": 10,
+      "K4_top_skills": {
+        "Machine Learning": 5,
+        "Excel": 4,
+        "Statistics": 4,
+        "SQL": 3,
+        "Spark": 2,
+        "Power BI": 2,
+        "Git": 2,
+        "Deep Learning": 1,
+        "AWS": 1,
+        "Scala": 1
+      },
+      "F1_remote_advantage": -4.4,
+      "F2_growth_potential": 5.4,
+      "F3_versatility_score": 52.7,
+      "raw_entry_jobs": 3,
+      "raw_remote_jobs": 2,
+      "raw_salary_count": 46,
+      "raw_skills_total": 25
+    },
+    {
+      "career_path": "Data Engineer",
+      "M1_job_postings": 23,
+      "M2_entry_pct": 0.0,
+      "M3_remote_pct": 13.0,
+      "M4_junior_title_pct": 0.0,
+      "M5_market_share": 8.0,
+      "C1_salary_median": 117966.0,
+      "C2_salary_range_avg": 0.0,
+      "C3_salary_premium_pct": 3.7,
+      "C4_compensation_rank": 5,
+      "S1_skill_barrier_score": 0.8,
+      "S2_entry_accessibility": -9.1,
+      "S3_competition_index": 100.0,
+      "K1_avg_skills_required": 0.8,
+      "K2_skill_overlap_pct": 55.0,
+      "K3_unique_skills_count": 11,
+      "K4_top_skills": {
+        "Machine Learning": 4,
+        "Scala": 2,
+        "Excel": 2,
+        "Python": 2,
+        "SQL": 2,
+        "Azure": 2,
+        "Git": 1,
+        "GCP": 1,
+        "Spark": 1,
+        "ETL": 1
+      },
+      "F1_remote_advantage": 4.3,
+      "F2_growth_potential": 8.3,
+      "F3_versatility_score": 59.1,
+      "raw_entry_jobs": 0,
+      "raw_remote_jobs": 3,
+      "raw_salary_count": 23,
+      "raw_skills_total": 19
+    },
+    {
+      "career_path": "Data Scientist",
+      "M1_job_postings": 28,
+      "M2_entry_pct": 10.7,
+      "M3_remote_pct": 10.7,
+      "M4_junior_title_pct": 3.6,
+      "M5_market_share": 9.8,
+      "C1_salary_median": 153468.0,
+      "C2_salary_range_avg": 3704.0,
+      "C3_salary_premium_pct": 34.9,
+      "C4_compensation_rank": 2,
+      "S1_skill_barrier_score": 0.7,
+      "S2_entry_accessibility": 1.6,
+      "S3_competition_index": 89.3,
+      "K1_avg_skills_required": 0.7,
+      "K2_skill_overlap_pct": 55.0,
+      "K3_unique_skills_count": 11,
+      "K4_top_skills": {
+        "Machine Learning": 6,
+        "Git": 2,
+        "Statistics": 2,
+        "Python": 2,
+        "Hadoop": 1,
+        "SPSS": 1,
+        "SQL": 1,
+        "Tableau": 1,
+        "AWS": 1,
+        "Deep Learning": 1
+      },
+      "F1_remote_advantage": 2.0,
+      "F2_growth_potential": 6.8,
+      "F3_versatility_score": 58.4,
+      "raw_entry_jobs": 3,
+      "raw_remote_jobs": 3,
+      "raw_salary_count": 28,
+      "raw_skills_total": 19
+    },
+    {
+      "career_path": "Machine Learning Engineer",
+      "M1_job_postings": 16,
+      "M2_entry_pct": 6.2,
+      "M3_remote_pct": 0.0,
+      "M4_junior_title_pct": 0.0,
+      "M5_market_share": 5.6,
+      "C1_salary_median": 129704.0,
+      "C2_salary_range_avg": 0.0,
+      "C3_salary_premium_pct": 14.0,
+      "C4_compensation_rank": 3,
+      "S1_skill_barrier_score": 1,
+      "S2_entry_accessibility": -2.8,
+      "S3_competition_index": 93.8,
+      "K1_avg_skills_required": 1,
+      "K2_skill_overlap_pct": 30.0,
+      "K3_unique_skills_count": 6,
+      "K4_top_skills": {
+        "Machine Learning": 9,
+        "Deep Learning": 2,
+        "Scala": 2,
+        "Git": 1,
+        "NLP": 1,
+        "Statistics": 1
+      },
+      "F1_remote_advantage": -8.7,
+      "F2_growth_potential": 10,
+      "F3_versatility_score": 35.0,
+      "raw_entry_jobs": 1,
+      "raw_remote_jobs": 0,
+      "raw_salary_count": 16,
+      "raw_skills_total": 16
+    },
+    {
+      "career_path": "NLP Engineer",
+      "M1_job_postings": 39,
+      "M2_entry_pct": 7.7,
+      "M3_remote_pct": 7.7,
+      "M4_junior_title_pct": 2.6,
+      "M5_market_share": 13.6,
+      "C1_salary_median": 127320.0,
+      "C2_salary_range_avg": 18197.0,
+      "C3_salary_premium_pct": 12.0,
+      "C4_compensation_rank": 4,
+      "S1_skill_barrier_score": 0.9,
+      "S2_entry_accessibility": -1.4,
+      "S3_competition_index": 92.3,
+      "K1_avg_skills_required": 0.9,
+      "K2_skill_overlap_pct": 35.0,
+      "K3_unique_skills_count": 7,
+      "K4_top_skills": {
+        "NLP": 16,
+        "Machine Learning": 13,
+        "Git": 2,
+        "Scala": 2,
+        "Java": 1,
+        "Python": 1,
+        "Deep Learning": 1
+      },
+      "F1_remote_advantage": -1.0,
+      "F2_growth_potential": 9.2,
+      "F3_versatility_score": 39.6,
+      "raw_entry_jobs": 3,
+      "raw_remote_jobs": 3,
+      "raw_salary_count": 39,
+      "raw_skills_total": 36
+    },
+    {
+      "career_path": "Quantitative Analyst",
+      "M1_job_postings": 44,
+      "M2_entry_pct": 18.2,
+      "M3_remote_pct": 6.8,
+      "M4_junior_title_pct": 2.3,
+      "M5_market_share": 15.4,
+      "C1_salary_median": 113578.0,
+      "C2_salary_range_avg": 13796.0,
+      "C3_salary_premium_pct": -0.1,
+      "C4_compensation_rank": 6,
+      "S1_skill_barrier_score": 0.3,
+      "S2_entry_accessibility": 9.1,
+      "S3_competition_index": 81.8,
+      "K1_avg_skills_required": 0.3,
+      "K2_skill_overlap_pct": 25.0,
+      "K3_unique_skills_count": 5,
+      "K4_top_skills": {
+        "Deep Learning": 5,
+        "Statistics": 5,
+        "Machine Learning": 2,
+        "Excel": 1,
+        "Git": 1
+      },
+      "F1_remote_advantage": -1.9,
+      "F2_growth_potential": 3.2,
+      "F3_versatility_score": 26.6,
+      "raw_entry_jobs": 8,
+      "raw_remote_jobs": 3,
+      "raw_salary_count": 44,
+      "raw_skills_total": 14
+    }
+  ],
+  "metadata": {
+    "total_careers": 8,
+    "total_jobs": 286,
+    "analysis_date": "/home/lietavkin/my_project",
+    "top_global_skills": [
+      [
+        "Machine Learning",
+        48
+      ],
+      [
+        "Deep Learning",
+        19
+      ],
+      [
+        "NLP",
+        19
+      ],
+      [
+        "Git",
+        12
+      ],
+      [
+        "Statistics",
+        12
+      ],
+      [
+        "SQL",
+        11
+      ],
+      [
+        "Scala",
+        11
+      ],
+      [
+        "Excel",
+        10
+      ],
+      [
+        "Python",
+        7
+      ],
+      [
+        "Power BI",
+        7
+      ],
+      [
+        "Tableau",
+        4
+      ],
+      [
+        "AWS",
+        4
+      ],
+      [
+        "Spark",
+        3
+      ],
+      [
+        "Azure",
+        2
+      ],
+      [
+        "Pandas",
+        1
+      ],
+      [
+        "GCP",
+        1
+      ],
+      [
+        "ETL",
+        1
+      ],
+      [
+        "Hadoop",
+        1
+      ],
+      [
+        "SPSS",
+        1
+      ],
+      [
+        "Java",
+        1
+      ]
+    ]
+  }
+}

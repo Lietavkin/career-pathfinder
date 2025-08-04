@@ -1,0 +1,57 @@
+# Virtual environments
+dashboard_env/
+venv/
+env/
+.env
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Streamlit cache
+.streamlit/
+
+# Large image files (keeping only essential CSVs)
+*.png
+*.jpg
+*.jpeg
+
+# Documentation files (keeping README.md)
+*_SUMMARY.md
+*_README.md
+SKILL_EXTRACTOR_GUIDE.md
+CAREER_PATH_ANALYSIS_REPORT.md
+METRICS_ENGINE_SUMMARY.md
+PROJECT_COMPLETE_SUMMARY.md
+ADVANCED_DASHBOARD_SUMMARY.md
+COMPLETE_SYSTEM_OVERVIEW.md
+DASHBOARD_README.md
+
+# Analysis scripts (keeping only the main app)
+analyze_real_job_skills.py
+create_skill_charts.py
+demo_skill_extractor.py
+gt_course_coverage_analysis*.py
+pathfinder_dashboard*.py
+score_career_paths.py
+skill_analysis.py
+test_skill_extraction.py
+visualize_skills.py
+
+# Other project directories
+my_python_project/
+data/
+src/

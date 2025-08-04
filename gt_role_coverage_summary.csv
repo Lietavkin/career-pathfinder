@@ -1,0 +1,9 @@
+role,total_skills,matched_skills,match_percent,gap
+NLP Engineer,10,6,60.0,4
+Data Scientist,10,8,80.0,2
+AI Researcher,10,7,70.0,3
+Business Intelligence Analyst,10,7,70.0,3
+Data Engineer,10,6,60.0,4
+Data Analyst,10,8,80.0,2
+Machine Learning Engineer,10,7,70.0,3
+Quantitative Analyst,10,9,90.0,1
