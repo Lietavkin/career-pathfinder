@@ -1,0 +1,9 @@
+rank,career_path,composite_score,salary,entry_level_pct,remote_pct,avg_skills,total_jobs
+1,Data Scientist,0.748,153468.0,10.7,10.7,1.6,28
+2,AI Researcher,0.705,168356.0,6.4,12.8,1.3,47
+3,Quantitative Analyst,0.535,113578.0,18.2,6.8,1.1,44
+4,NLP Engineer,0.532,127320.0,7.7,7.7,1.5,39
+5,Machine Learning Engineer,0.517,129704.0,6.2,0.0,1.8,16
+6,Data Engineer,0.317,117966.0,0.0,13.0,1.1,23
+7,Business Intelligence Analyst,0.281,85139.0,11.6,11.6,0.9,43
+8,Data Analyst,0.166,88925.0,6.5,4.3,0.9,46

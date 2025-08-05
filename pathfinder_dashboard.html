@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🧭 Pathfinder: Data Career Explorer</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+        
+        .metric-card {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 2em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .metric-label {
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .top-career {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        
+        .top-career h2 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .section {
+            background: white;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .table-responsive {
+            overflow-x: auto;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #333;
+        }
+        
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        .rank-1 { background-color: #fff3cd !important; }
+        .rank-2 { background-color: #d4e6f1 !important; }
+        .rank-3 { background-color: #fadbd8 !important; }
+        
+        .chart-container {
+            position: relative;
+            height: 400px;
+            margin: 20px 0;
+        }
+        
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .methodology {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 20px;
+            margin-top: 30px;
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+        
+        .badge {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        
+        .badge-gold { background-color: #ffd700; color: #333; }
+        .badge-silver { background-color: #c0c0c0; color: #333; }
+        .badge-bronze { background-color: #cd7f32; color: white; }
+        
+        @media (max-width: 768px) {
+            .charts-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>🧭 Pathfinder: Data Career Explorer</h1>
+            <p>Built with <strong>286 real job postings</strong> from Adzuna API</p>
+            <p>Data-driven career guidance for the modern job market</p>
+        </div>
+        
+        <!-- Market Summary -->
+        <div class="metrics-grid">
+            <div class="metric-card">
+                <div class="metric-value">286</div>
+                <div class="metric-label">Jobs Analyzed</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">$123,057</div>
+                <div class="metric-label">Average Salary</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">8.4%</div>
+                <div class="metric-label">Entry-Level Rate</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">8.4%</div>
+                <div class="metric-label">Remote Work Rate</div>
+            </div>
+        </div>
+        
+        <!-- Top Career Highlight -->
+        <div class="top-career">
+            <h2>🏆 Top Recommended Career Path</h2>
+            <h2>Data Scientist</h2>
+            <p><strong>Composite Score:</strong> 0.748 | <strong>Salary:</strong> $153,468</p>
+            <p>Best overall balance of salary, accessibility, growth, and flexibility</p>
+        </div>
+        
+        <!-- Career Rankings Table -->
+        <div class="section">
+            <h2>🎯 Complete Career Path Rankings</h2>
+            <p><em>Composite scores weighted by: 40% Salary, 30% Entry-Level %, 20% Skill Growth, 10% Remote %</em></p>
+            
+            <div class="table-responsive">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Career Path</th>
+                            <th>Score</th>
+                            <th>Median Salary</th>
+                            <th>Entry-Level %</th>
+                            <th>Remote %</th>
+                            <th>Avg Skills</th>
+                            <th>Jobs</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="rank-1">
+                            <td>1 <span class="badge badge-gold">🥇</span></td>
+                            <td><strong>Data Scientist</strong></td>
+                            <td>0.748</td>
+                            <td>$153,468</td>
+                            <td>10.7%</td>
+                            <td>10.7%</td>
+                            <td>1.6</td>
+                            <td>28</td>
+                        </tr>
+                        <tr class="rank-2">
+                            <td>2 <span class="badge badge-silver">🥈</span></td>
+                            <td><strong>AI Researcher</strong></td>
+                            <td>0.705</td>
+                            <td>$168,356</td>
+                            <td>6.4%</td>
+                            <td>12.8%</td>
+                            <td>1.3</td>
+                            <td>47</td>
+                        </tr>
+                        <tr class="rank-3">
+                            <td>3 <span class="badge badge-bronze">🥉</span></td>
+                            <td><strong>Quantitative Analyst</strong></td>
+                            <td>0.535</td>
+                            <td>$113,578</td>
+                            <td>18.2%</td>
+                            <td>6.8%</td>
+                            <td>1.1</td>
+                            <td>44</td>
+                        </tr>
+                        <tr class="">
+                            <td>4 </td>
+                            <td><strong>NLP Engineer</strong></td>
+                            <td>0.532</td>
+                            <td>$127,320</td>
+                            <td>7.7%</td>
+                            <td>7.7%</td>
+                            <td>1.5</td>
+                            <td>39</td>
+                        </tr>
+                        <tr class="">
+                            <td>5 </td>
+                            <td><strong>Machine Learning Engineer</strong></td>
+                            <td>0.517</td>
+                            <td>$129,704</td>
+                            <td>6.2%</td>
+                            <td>0.0%</td>
+                            <td>1.8</td>
+                            <td>16</td>
+                        </tr>
+                        <tr class="">
+                            <td>6 </td>
+                            <td><strong>Data Engineer</strong></td>
+                            <td>0.317</td>
+                            <td>$117,966</td>
+                            <td>0.0%</td>
+                            <td>13.0%</td>
+                            <td>1.1</td>
+                            <td>23</td>
+                        </tr>
+                        <tr class="">
+                            <td>7 </td>
+                            <td><strong>Business Intelligence Analyst</strong></td>
+                            <td>0.281</td>
+                            <td>$85,139</td>
+                            <td>11.6%</td>
+                            <td>11.6%</td>
+                            <td>0.9</td>
+                            <td>43</td>
+                        </tr>
+                        <tr class="">
+                            <td>8 </td>
+                            <td><strong>Data Analyst</strong></td>
+                            <td>0.166</td>
+                            <td>$88,925</td>
+                            <td>6.5%</td>
+                            <td>4.3%</td>
+                            <td>0.9</td>
+                            <td>46</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Charts Section -->
+        <div class="section">
+            <h2>📊 Visual Analysis</h2>
+            <div class="charts-grid">
+                <div>
+                    <h3>💰 Salary Comparison</h3>
+                    <div class="chart-container">
+                        <canvas id="salaryChart"></canvas>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>🎓 Entry-Level Opportunities</h3>
+                    <div class="chart-container">
+                        <canvas id="entryChart"></canvas>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>🏠 Remote Work Availability</h3>
+                    <div class="chart-container">
+                        <canvas id="remoteChart"></canvas>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>📈 Composite Scores</h3>
+                    <div class="chart-container">
+                        <canvas id="scoreChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Key Insights -->
+        <div class="section">
+            <h2>💡 Key Market Insights</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
+                <div class="metric-card">
+                    <h3>💰 Highest Salary</h3>
+                    <p><strong>AI Researcher</strong></p>
+                    <p>$168,356</p>
+                </div>
+                
+                <div class="metric-card">
+                    <h3>🎓 Most Beginner-Friendly</h3>
+                    <p><strong>Quantitative Analyst</strong></p>
+                    <p>18.2%</p>
+                </div>
+                
+                <div class="metric-card">
+                    <h3>🏠 Most Remote-Friendly</h3>
+                    <p><strong>Data Engineer</strong></p>
+                    <p>13.0%</p>
+                </div>
+                
+                <div class="metric-card">
+                    <h3>🧠 Highest Skill Growth</h3>
+                    <p><strong>Machine Learning Engineer</strong></p>
+                    <p>1.8 skills avg</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Methodology -->
+        <div class="methodology">
+            <h2>🛠️ Methodology & Data Sources</h2>
+            <p><strong>Data Collection:</strong> 286 real job postings from Adzuna Job Search API</p>
+            <p><strong>Processing Pipeline:</strong> fetch_jobs.py → clean_jobs_simple.py → score_career_paths.py</p>
+            <p><strong>Scoring Formula:</strong> Composite Score = 0.4×Salary + 0.3×Entry-Level + 0.2×Skills + 0.1×Remote</p>
+            <p><strong>Skills Tracked:</strong> Machine Learning, Deep Learning, NLP, Python, SQL, Git, AWS, Azure, GCP, Docker, Kubernetes, TensorFlow, PyTorch, Spark, Scala, Statistics</p>
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <p><strong>🧭 Pathfinder Dashboard</strong> | Generated on August 03, 2025</p>
+            <p>Data-driven career guidance for the modern data professional</p>
+            <p><em>Source: Adzuna API • Sample: 286 real job postings • Market: United States</em></p>
+        </div>
+    </div>
+    
+    <!-- Chart.js Scripts -->
+    <script>
+        // Chart configuration
+        const chartOptions = {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        };
+        
+        // Data
+        const salaryData = {"labels": ["Data Scientist", "AI Researcher", "Quantitative Analyst", "NLP Engineer", "Machine Learning Engineer", "Data Engineer", "Business Intelligence Analyst", "Data Analyst"], "values": [153468.0, 168356.0, 113578.0, 127320.0, 129704.0, 117966.0, 85139.0, 88925.0]};
+        const entryData = {"labels": ["Data Scientist", "AI Researcher", "Quantitative Analyst", "NLP Engineer", "Machine Learning Engineer", "Data Engineer", "Business Intelligence Analyst", "Data Analyst"], "values": [10.7, 6.4, 18.2, 7.7, 6.2, 0.0, 11.6, 6.5]};
+        const remoteData = {"labels": ["Data Scientist", "AI Researcher", "Quantitative Analyst", "NLP Engineer", "Machine Learning Engineer", "Data Engineer", "Business Intelligence Analyst", "Data Analyst"], "values": [10.7, 12.8, 6.8, 7.7, 0.0, 13.0, 11.6, 4.3]};
+        
+        // Salary Chart
+        const salaryCtx = document.getElementById('salaryChart').getContext('2d');
+        new Chart(salaryCtx, {
+            type: 'bar',
+            data: {
+                labels: salaryData.labels,
+                datasets: [{
+                    data: salaryData.values,
+                    backgroundColor: 'rgba(102, 126, 234, 0.8)',
+                    borderColor: 'rgba(102, 126, 234, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return '$' + value.toLocaleString();
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Entry-Level Chart
+        const entryCtx = document.getElementById('entryChart').getContext('2d');
+        new Chart(entryCtx, {
+            type: 'bar',
+            data: {
+                labels: entryData.labels,
+                datasets: [{
+                    data: entryData.values,
+                    backgroundColor: 'rgba(76, 175, 80, 0.8)',
+                    borderColor: 'rgba(76, 175, 80, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Remote Work Chart
+        const remoteCtx = document.getElementById('remoteChart').getContext('2d');
+        new Chart(remoteCtx, {
+            type: 'bar',
+            data: {
+                labels: remoteData.labels,
+                datasets: [{
+                    data: remoteData.values,
+                    backgroundColor: 'rgba(255, 193, 7, 0.8)',
+                    borderColor: 'rgba(255, 193, 7, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        ticks: {
+                            callback: function(value) {
+                                return value + '%';
+                            }
+                        }
+                    }
+                }
+            }
+        });
+        
+        // Composite Score Chart
+        const scoreCtx = document.getElementById('scoreChart').getContext('2d');
+        new Chart(scoreCtx, {
+            type: 'bar',
+            data: {
+                labels: salaryData.labels,
+                datasets: [{
+                    data: [0.748, 0.705, 0.535, 0.532, 0.517, 0.317, 0.281, 0.166],
+                    backgroundColor: 'rgba(118, 75, 162, 0.8)',
+                    borderColor: 'rgba(118, 75, 162, 1)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        max: 1.0,
+                        ticks: {
+                            callback: function(value) {
+                                return value.toFixed(2);
+                            }
+                        }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
